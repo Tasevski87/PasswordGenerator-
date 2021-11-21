@@ -3,30 +3,30 @@
 var generateBtn = document.querySelector("#generate");
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
-var number = '1234567890'
-var specialCharacers = '!@#$%^&*()_+<>?,./=+-;{|}[\]:~'
+var number = '1234567890';
+var specialCharacers = '!@#$%^&*()_+<>?,./=+-;{|}[\]:~';
 
 // we created a funcion 
 function generatePassword() {
   var password = '';
   var allValues = '';
 
-// we created window task that ask you Between 8 and 128 how many characters would you like your password to contain?
+// we created window task that ask the user: Between 8 and 128 how many characters would you like your password to contain?
   var pwdLength = window.prompt("Between 8 and 128 how many characters would you like your password to contain?");
 
-  //Over here we are checkin does your entered number is in our set range or is our number < 8  or  > than 128
+  //Over here we are checkin does the user entered number is in our set range or entered number < 8  or  > than 128
   while (pwdLength < 8 || pwdLength > 128 || isNaN(pwdLength) === true) {
     alert("Your password must be a number and it must be tween 8 and 128.")
     pwdLength = window.prompt("Between 8 and 128 how many characters would you like your password to contain?");
   }
 
-  //This window ask about options with your password like Do you want uppercase letters?, Do you want lowercase letters?, Do you want numbers?, Do you want special characters?
+  //This window ask about options with the user password: Do you want uppercase letters?, Do you want lowercase letters?, Do you want numbers?, Do you want special characters?
   var isUpperCase = window.confirm("Do you want uppercase letters?");
   var isLowerCase = window.confirm("Do you want lowercase letters?");
   var hasNumbers = window.confirm("Do you want numbers?");
   var hasSpecialCharacters = window.confirm("Do you want special characters?");
   
-  // Over here we are checkin did you chose at least one type of caracter when the window asked you 
+  // Over here we are check did the user chose at least one type of caracter  
   while (!isUpperCase && !isLowerCase && !hasNumbers && !hasSpecialCharacters) {
     alert('You must choose at least one type of character');
     isUpperCase = window.confirm("Do you want uppercase letters?");
@@ -35,7 +35,7 @@ function generatePassword() {
     hasSpecialCharacters = window.confirm("Do you want special characters?");
   }
 
-  //Over here we are checking which special caracter you chose when the window asked you
+  //Over here we are checking which special caracter the user  chose when the window asked 
   if (isUpperCase) {
     allValues += upperCase;
   }
